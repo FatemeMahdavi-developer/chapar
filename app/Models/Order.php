@@ -6,11 +6,12 @@ use App\Enums\Order\OrderStatusEnum;
 use App\Trait\DateConvert;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Order extends Model
 {
-    use DateConvert,SoftDeletes;
+    use DateConvert,SoftDeletes,HasFactory;
 
     protected $fillable = [
         'sender_name',
@@ -23,6 +24,7 @@ class Order extends Model
         'receiver_postal_code',
         'parcel_weight',
         'barcode',
+        'status',
         'deleted_at'
     ];
 

@@ -15,6 +15,7 @@ class StoreOrderResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
+            'id' => $this->resource->id,
             'sender_name' => $this->resource->sender_name,
             'sender_mobile'=> $this->resource->sender_mobile,
             'sender_address' => $this->resource->sender_address,
@@ -25,6 +26,7 @@ class StoreOrderResource extends JsonResource
             'receiver_postal_code' => $this->resource->receiver_postal_code,
             'parcel_weight' => $this->resource->parcel_weight,
             'barcode' => $this->resource->barcode,
+            'status' => $this->resource->status,
             "created_at" => $this->date_convert($this->resource->created_at),
         ];
     }

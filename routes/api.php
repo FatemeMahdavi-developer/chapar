@@ -13,11 +13,11 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api\V1','middleware' => 'throttl
         Route::post('logout',[AuthController::class,'logout']);
     });
 
-    Route::group(['middleware'=>'auth:api'], function () {
+    // Route::group(['middleware'=>'auth:api'], function () {
         Route::post("order",[OrderController::class,'store']);
         Route::get("order",[OrderController::class,'index']);
         Route::patch('/order/{barcode}/status', [OrderController::class, 'updateStatus']);
         Route::delete('/order/{order}', [OrderController::class, 'destroy']);
-    });
+    // });
 
 });

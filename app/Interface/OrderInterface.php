@@ -18,5 +18,5 @@ interface OrderInterface
 
     public function updateOrder(Order $order,array $data) :Order;
 
-    public function deleteOrder(Order $id);
+    public function deleteOrder(Order $id) :bool;
 }

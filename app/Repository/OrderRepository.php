@@ -56,9 +56,9 @@ class OrderRepository implements OrderInterface
         return Order::query()->find($id)->first();
     }
 
-    public function deleteOrder(Order $order)
+    public function deleteOrder(Order $order) :bool
     {
-        $order->delete();
+        return $order->delete();
     }
 
 }

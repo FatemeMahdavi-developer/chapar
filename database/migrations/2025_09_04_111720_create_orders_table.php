@@ -24,7 +24,6 @@ return new class extends Migration
             $table->string('receiver_postal_code')->nullable();
             $table->decimal('parcel_weight',8,3)->default(0); // max:99,999.999 kg
             $table->string('barcode',10)->unique();
-            // $table->enum('status', array_map(fn($case) => $case->name, OrderStatusEnum::cases()))->default(OrderStatusEnum::REGISTERED->name);
             $table->enum('status', array_column(OrderStatusEnum::cases(), 'value'))
             ->default(OrderStatusEnum::REGISTERED->value);
             $table->softDeletes();
